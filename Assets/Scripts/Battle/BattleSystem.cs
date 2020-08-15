@@ -9,21 +9,32 @@ public class BattleSystem : MonoBehaviour
 {
     //Following script based on Brackeys "Turn-Based Combat in Unity" video
 
-    public GameObject playerPrefab;
-    public GameObject enemyPrefab;
+    public GameObject playerPrefab1;
+    public GameObject playerPrefab2;
+    public GameObject playerPrefab3;
+    public GameObject playerPrefab4;
+    public GameObject enemyPrefab1;
+    public GameObject enemyPrefab2;
+    public GameObject enemyPrefab3;
+    public GameObject enemyPrefab4;
 
-    public Transform playerBattleStation;
-    public Transform enemyBattleStation;
+    public GameObject[] enemyPrefabs;
+    public GameObject[] playerPrefabs;
 
-    UnitScript playerUnit;
-    UnitScript enemyUnit;
+    public Transform playerBattleStation1;
+    public Transform enemyBattleStation1;
+
+    UnitScript playerUnit1;
+    UnitScript enemyUnit1;
+
+    public BattleHUD playerHUD1;
+    public BattleHUD enemyHUD1;
 
     public Text dialogueText;
 
-    public BattleHUD playerHUD;
-    public BattleHUD enemyHUD;
-
     public BattleState state;
+
+    
 
     void Start()
     {
@@ -35,16 +46,16 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle() //Runs once at the start of battle to set the HUD values and spawn the units. Is IEnumerator so we can pause and see whats on screen
     {
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        playerUnit = playerGO.GetComponent<UnitScript>();
+        GameObject playerGO = Instantiate(playerPrefab1, playerBattleStation1);
+        playerUnit1 = playerGO.GetComponent<UnitScript>();
 
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
-        enemyUnit = enemyGO.GetComponent<UnitScript>();
+        GameObject enemyGO = Instantiate(enemyPrefab1, enemyBattleStation1);
+        enemyUnit1 = enemyGO.GetComponent<UnitScript>();
 
-        dialogueText.text = "A wild " + enemyUnit.unitName + " appears!";
+        dialogueText.text = "The enemy appears before you";
 
-        playerHUD.SetHUD(playerUnit);
-        enemyHUD.SetHUD(enemyUnit);
+        playerHUD1.SetHUD(playerUnit1);
+        enemyHUD1.SetHUD(enemyUnit1);
 
         yield return new WaitForSeconds(2f); //Reason for IEnumerator, pauses the screen for 2 seconds before going to PLAYERTURN state
 
@@ -60,9 +71,9 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerAttack()
     {
         // Damage the enemy
-        bool isDead = enemyUnit.TakeDamage(playerUnit.attack);
+        bool isDead = enemyUnit1.TakeDamage(playerUnit1.attack);
 
-        enemyHUD.SetHP(enemyUnit.currentHP);
+        enemyHUD1.SetHP(enemyUnit1.currentHP);
         dialogueText.text = "The attack is successful";
 
         yield return new WaitForSeconds(2f);
@@ -85,9 +96,9 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
-        playerUnit.Heal(5);
+        playerUnit1.Heal(5);
 
-        playerHUD.SetHP(playerUnit.currentHP);
+        playerHUD1.SetHP(playerUnit1.currentHP);
         dialogueText.text = "You heal your wounds";
 
         yield return new WaitForSeconds(2f);
@@ -101,12 +112,12 @@ public class BattleSystem : MonoBehaviour
         //Enemy logic
         //Just basic here to get working, but will eventually reference the unit and have different logic for each enemy
 
-        dialogueText.text = enemyUnit.unitName + " attacks!";
+        dialogueText.text = enemyUnit1.unitName + " attacks!";
         yield return new WaitForSeconds(1f);
 
-        bool isDead = playerUnit.TakeDamage(enemyUnit.attack);
+        bool isDead = playerUnit1.TakeDamage(enemyUnit1.attack);
 
-        playerHUD.SetHP(playerUnit.currentHP);
+        playerHUD1.SetHP(playerUnit1.currentHP);
 
         //Check if player dead
         if (isDead)
