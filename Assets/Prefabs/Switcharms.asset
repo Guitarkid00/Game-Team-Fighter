@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94aa4f07e31e822419f22c7a45717788, type: 3}
+  m_Name: Switcharms
+  m_EditorClassIdentifier: 
+  unitName: Switcharms1
+  artwork: {fileID: 21300000, guid: 6bf2f40feb3736245bb07b74c9cdc571, type: 3}
+  unitLevel: 20
+  baseHP: 10
+  baseAtk: 20
+  perLevelHP: 50
+  perLevelAtk: 5
+  maxHP: 0
+  currentHP: 0
+  currentAtk: 0
