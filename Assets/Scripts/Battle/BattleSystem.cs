@@ -10,16 +10,16 @@ public class BattleSystem : MonoBehaviour
     //Following script based on Brackeys "Turn-Based Combat in Unity" video
 
     public GameObject playerPrefab1;
-    public GameObject playerPrefab2;
-    public GameObject playerPrefab3;
-    public GameObject playerPrefab4;
+    //public GameObject playerPrefab2;
+    //public GameObject playerPrefab3;
+    //public GameObject playerPrefab4;
     public GameObject enemyPrefab1;
-    public GameObject enemyPrefab2;
-    public GameObject enemyPrefab3;
-    public GameObject enemyPrefab4;
+    //public GameObject enemyPrefab2;
+    //public GameObject enemyPrefab3;
+    //public GameObject enemyPrefab4;
 
-    public GameObject[] enemyPrefabs;
-    public GameObject[] playerPrefabs;
+    //public GameObject[] enemyPrefabs;
+    //public GameObject[] playerPrefabs;
 
     public Transform playerBattleStation1;
     public Transform enemyBattleStation1;

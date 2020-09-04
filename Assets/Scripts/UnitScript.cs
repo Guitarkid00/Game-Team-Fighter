@@ -30,4 +30,12 @@ public class UnitScript : MonoBehaviour
         if (currentHP > maxHP)
             currentHP = maxHP;
     }
+
+    public UnitScript(string uName, int uLevel, int uAttack, int uMaxHP) //Constructor for class
+    {
+        unitName = uName;
+        unitLevel = uLevel;
+        attack = uAttack;
+        maxHP = uMaxHP;
+    }
 }
