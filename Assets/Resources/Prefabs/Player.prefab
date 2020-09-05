@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2299686590201800648}
   - component: {fileID: 8108624062605996384}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Switcharms
   unitLevel: 60
+  unitID: 2
   attack: 20
   maxHP: 200
   currentHP: 160

@@ -5630,18 +5630,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e4a0360e0f49749846eab400575adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab1: {fileID: 823212388794155790, guid: 78a8e87bcfeb12044a4e46937dde6e70,
+  playerPrefab1: {fileID: 6168804391079201254, guid: 3042720e983a9514698fa4a9d43a9396,
     type: 3}
-  playerPrefab2: {fileID: 0}
-  playerPrefab3: {fileID: 0}
-  playerPrefab4: {fileID: 0}
   enemyPrefab1: {fileID: 7573274880058286574, guid: ec3a9dd797e36c444aeec69435fea2a8,
     type: 3}
-  enemyPrefab2: {fileID: 0}
-  enemyPrefab3: {fileID: 0}
-  enemyPrefab4: {fileID: 0}
-  enemyPrefabs: []
-  playerPrefabs: []
   playerBattleStation1: {fileID: 306127958}
   enemyBattleStation1: {fileID: 551738104}
   playerHUD1: {fileID: 2121581891}
@@ -5918,6 +5910,7 @@ GameObject:
   - component: {fileID: 2031240960}
   - component: {fileID: 2031240959}
   - component: {fileID: 2031240958}
+  - component: {fileID: 2031240961}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5990,6 +5983,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2031240961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031240957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449f9fbdf32835e4d9ef105d48396ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2044630140
 GameObject:
   m_ObjectHideFlags: 0

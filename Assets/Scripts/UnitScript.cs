@@ -9,11 +9,26 @@ public class UnitScript : MonoBehaviour
     public string unitName;
     public int unitLevel;
 
-    public int attack; //Originally damage in video
+    public int unitID;
+
+    public int unitAttack; //Originally damage in video
 
     public int maxHP;
     public int currentHP;
 
+    public int baseHP;
+    public int baseAttack;
+    public int PerLevelHP;
+    public int PerLevelAttack;
+
+    public void CalcStats()
+    {
+        maxHP = baseHP + (unitLevel * PerLevelHP);
+        unitAttack = baseAttack + (unitLevel * PerLevelAttack);
+        currentHP = maxHP;
+    }
+
+    
     public bool TakeDamage(int dmg) //Method for taking damage from an attack
     {
         currentHP -= dmg;
@@ -35,7 +50,7 @@ public class UnitScript : MonoBehaviour
     {
         unitName = uName;
         unitLevel = uLevel;
-        attack = uAttack;
+        unitAttack = uAttack;
         maxHP = uMaxHP;
     }
 }
