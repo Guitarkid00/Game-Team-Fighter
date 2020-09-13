@@ -89,7 +89,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
-        playerUnit1.Heal(5);
+        playerUnit1.Heal(5); //Uses the Heal method in the UnitScript
 
         playerHUD1.SetHP(playerUnit1.currentHP);
         dialogueText.text = "You heal your wounds";
@@ -153,7 +153,7 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(PlayerAttack());
     }
 
-    public void OnHealButton()
+    public void OnHealButton() //What happens when the player presses the Heal button, Will be changed/removed once abilities are sorted
     {
         if (state != BattleState.PLAYERTURN)
             return;

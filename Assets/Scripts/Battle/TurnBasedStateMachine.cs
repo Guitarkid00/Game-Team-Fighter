@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TurnBasedStateMachine : MonoBehaviour
 {
+
+    private BattleStateStart battleStateStartScript = new BattleStateStart();
+
     public enum BattleStates
     {
         START,
@@ -20,6 +23,7 @@ public class TurnBasedStateMachine : MonoBehaviour
     private void Start()
     {
         currentState = BattleStates.START;
+
     }
 
     private void Update()
@@ -28,7 +32,8 @@ public class TurnBasedStateMachine : MonoBehaviour
         switch (currentState)
         {
             case (BattleStates.START):
-                //Start State
+                //Start Start
+                battleStateStartScript.PrepareBattle();
                 break;
             case (BattleStates.PLAYERTURN):
                 //Start State

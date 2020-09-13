@@ -135,3 +135,6 @@ MonoBehaviour:
   baseAttack: 0
   PerLevelHP: 0
   PerLevelAttack: 0
+  unitType: 0
+  unitRarity: 1
+  unitStage: 2

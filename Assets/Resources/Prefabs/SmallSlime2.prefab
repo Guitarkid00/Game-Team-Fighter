@@ -54,6 +54,9 @@ MonoBehaviour:
   baseAttack: 0
   PerLevelHP: 0
   PerLevelAttack: 0
+  unitType: 1
+  unitRarity: 0
+  unitStage: 1
 --- !u!1 &7406637607396290480
 GameObject:
   m_ObjectHideFlags: 0

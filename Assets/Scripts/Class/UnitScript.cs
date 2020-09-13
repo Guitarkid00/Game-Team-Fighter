@@ -19,6 +19,16 @@ public class UnitScript : MonoBehaviour
     public int PerLevelHP; //How much maxHP the unit gains for each level
     public int PerLevelAttack; //How much Attack the unit gains for each level
 
+    public enum unitTypes { BigSlime, SmallSlime, Rat, Landstalker, Buer, Spider, Scorpion, Worm, Dragon, Goblin, Lizardman, Nutsy, Sahagin}
+    public enum unitRare { Common, Uncommon, Rare}
+    public enum unitStages { Child, Adult, Elder}
+
+    public unitTypes unitType;
+    public unitRare unitRarity;
+    public unitStages unitStage;
+
+    
+
     public void CalcStats() //Used to set the units' stat based on its level, not currently called anywhere
     {
         maxHP = baseHP + (unitLevel * PerLevelHP);
