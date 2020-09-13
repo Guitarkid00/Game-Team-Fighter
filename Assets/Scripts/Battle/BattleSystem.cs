@@ -7,19 +7,12 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
-    //Following script based on Brackeys "Turn-Based Combat in Unity" video
+    //NOTE I am planning on remaking all of this to a version that I feel will work better for battle mechanics I haven't made yet
+    //Will still be using a StateMachine due to turn based nature, just that I found better way to setup the code
 
-    public GameObject playerPrefab1;
-    //public GameObject playerPrefab2;
-    //public GameObject playerPrefab3;
-    //public GameObject playerPrefab4;
-    public GameObject enemyPrefab1;
-    //public GameObject enemyPrefab2;
-    //public GameObject enemyPrefab3;
-    //public GameObject enemyPrefab4;
-
-    //public GameObject[] enemyPrefabs;
-    //public GameObject[] playerPrefabs;
+    public GameObject playerPrefab1; //Gets the first unit in the Current Team List
+    public GameObject enemyPrefab1; //Is the first unit of the enemies for this stage
+    //NOTE has a 1 because eventually there will be multiple of these for each team for multiple units
 
     public Transform playerBattleStation1;
     public Transform enemyBattleStation1;
@@ -36,7 +29,7 @@ public class BattleSystem : MonoBehaviour
 
     
 
-    void Start()
+    void Start() //Sets BattleState to START and starts the method to set up the UI
     {
         state = BattleState.START;
         StartCoroutine(SetupBattle());
@@ -54,12 +47,12 @@ public class BattleSystem : MonoBehaviour
 
         dialogueText.text = "The enemy appears before you";
 
-        playerHUD1.SetHUD(playerUnit1);
+        playerHUD1.SetHUD(playerUnit1); //Both of these go to the BattleHUD.cs script and are used to set the UI Display
         enemyHUD1.SetHUD(enemyUnit1);
 
         yield return new WaitForSeconds(2f); //Reason for IEnumerator, pauses the screen for 2 seconds before going to PLAYERTURN state
 
-        state = BattleState.PLAYERTURN;
+        state = BattleState.PLAYERTURN; //Change BattleState to PLAYERTURN
         PlayerTurn();
     }
 
@@ -152,7 +145,7 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    public void OnAttackButton()
+    public void OnAttackButton() //What happens when the Attack button is pressed
     {
         if (state != BattleState.PLAYERTURN)
             return;
